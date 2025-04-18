@@ -22,9 +22,9 @@ const createTokenAndSaveCookies = async (userId, res) => {
 
         // Set the token in cookies
         res.cookie("jwt", token, {
-            httpOnly: true, // Ensures the cookie is not accessible via JavaScript in the browser
-            secure: true,   // Ensures the cookie is only sent over HTTPS
-            sameSite: "strict", // Helps prevent CSRF attacks by allowing cookies to only be sent for same-site requests
+            httpOnly: true,
+            secure: false,        // Allow cookie over HTTP (localhost)
+            sameSite: "lax", 
         });
 
         // Save the token in the user's document in the database
