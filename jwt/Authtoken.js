@@ -24,7 +24,7 @@ const createTokenAndSaveCookies = async (userId, res) => {
         res.cookie("jwt", token, {
             httpOnly: true,
             secure: false,        // Allow cookie over HTTP (localhost)
-            sameSite: "lax", 
+            sameSite: 'None', 
         });
 
         // Save the token in the user's document in the database
